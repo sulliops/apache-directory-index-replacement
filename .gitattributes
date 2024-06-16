@@ -1,0 +1,2 @@
+# Override Pico CSS as vendored so that language stats are not inflated
+.theme/css/* linguist-vendored
