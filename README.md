@@ -42,7 +42,7 @@ Assuming WebDAV is setup and enabled in an existing virtual host config, add the
 </IfModule>
 ```
 
-Then, simply copy the [.files](.files/) directory into the root of your WebDAV share and restart apache2. The various configuration options can be changed as required and reloaded by restarting apache2.
+Then, simply copy the [.theme](.theme/) directory into the root of your WebDAV share and restart apache2. The various configuration options can be changed as required and reloaded by restarting apache2.
 
 **Important note:** the breadcrumb navigation provided by the custom front end assumes a directory structure that begins at the root of your domain or hostname. For example: visiting `http://localhost/` places you in the root of your WebDAV share, as opposed to `http://localhost/webdav/` coupled with the Apache `Alias` directive as recommended by many tutorials. Breadcrumb navigation may not work as expected when configuration differs from the sample config.
 
@@ -50,3 +50,5 @@ Then, simply copy the [.files](.files/) directory into the root of your WebDAV s
 Thanks to a number of folks on StackOverflow for tidbits of information regarding mod_autoindex behavior, but most importantly to [Jeff Star](https://perishablepress.com/author/perish/) for his incredible [write-up on directory listing customizations](https://perishablepress.com/better-default-directory-views-with-htaccess/).
 
 Additionally, becoming familiar with the [mod_autoindex configuration options](https://httpd.apache.org/docs/2.4/mod/mod_autoindex.html) is a must for modifying this project.
+
+Finally, thanks to [Pico CSS](https://picocss.com/) for a minimal, easy-to-use front end framework. I would have abandoned this idea if I had to use Bootstrap.
