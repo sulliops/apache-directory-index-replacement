@@ -12,3 +12,10 @@ hgroup {
     margin-bottom: initial;
 
 }
+
+/* Prevent automatic underlining of links in pseudonavbar */
+.nav-item-custom {
+
+    --pico-text-decoration: initial;
+
+}

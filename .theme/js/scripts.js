@@ -1,5 +1,4 @@
-// Get the current pathname and remove trailing slash to mimic default 
-// mod_autoindex behavior
+// Get the current pathname and remove trailing slash to mimic default mod_autoindex behavior
 // If removing trailing slash would result in an empty string, return "/"
 function getNormalizedPathname() {
 
@@ -26,18 +25,18 @@ function getdirectoryHierarchy() {
 
 }
 
-// Programmatically build navbar elements
+// Programmatically build navigation elements
 function buildNavItems() {
 
-    let ul = document.createElement("ul");
+    let p = document.createElement("p");
+    p.classList.add("navbar-custom");
 
     let directoryHierarchy = getdirectoryHierarchy();
     for (let i = 0; i < directoryHierarchy.length; i++) {
 
-        let li = document.createElement("li");
-
         let a = document.createElement("a");
         a.classList.add("pico-color-cyan-500");
+        a.classList.add("nav-item-custom");
         // Last breadcrumb link should self-reference
         if (i + 1 === directoryHierarchy.length) {
 
@@ -82,14 +81,15 @@ function buildNavItems() {
 
             a.innerHTML = directoryHierarchy[i];
 
-        }
-        li.appendChild(a);
+            p.innerHTML += " > ";
 
-        ul.appendChild(li);
+        }
+        
+        p.appendChild(a);
 
     }
 
-    $("nav").append(ul);
+    $("#nav-wrapper").append(p);
 
 }
 
