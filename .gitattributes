@@ -1,2 +1,5 @@
 # Override Pico CSS as vendored so that language stats are not inflated
-.theme/css/* linguist-vendored
+.theme/css/pico/* linguist-vendored
+
+# Override jQuery as vendored so that language stats are not inflated
+.theme/js/jquery* linguist-vendored
