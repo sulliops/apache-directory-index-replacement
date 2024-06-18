@@ -2,7 +2,8 @@
 // If removing trailing slash would result in an empty string, return "/"
 function getNormalizedPathname() {
 
-    return (window.location.pathname.substring(0, window.location.pathname.length - 1) || "/");
+    // Decode URI if necessary
+    return (decodeURI(window.location.pathname.substring(0, window.location.pathname.length - 1)) || "/");
 
 }
 
