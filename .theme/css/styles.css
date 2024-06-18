@@ -1,0 +1,14 @@
+/* Override default white background when page doesn't extend to full height */
+body {
+
+    min-height: 100vh;
+    background-color: var(--pico-color-grey-50);
+
+}
+
+/* Pico CSS default spacing is... a bit much for my liking */
+hgroup {
+
+    margin-bottom: initial;
+
+}
