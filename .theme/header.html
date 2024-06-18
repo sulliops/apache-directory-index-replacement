@@ -24,16 +24,17 @@
 
 	</head>
 
-	<!-- Body element starts out hidden so we can extract the mod_autoindex 
-	table and re-format in the background -->
-	<body style="display: none;">
+	<body>
 
 		<header class="container-fluid overflow-auto pico-background-grey-50">
 			<hgroup id="nav-wrapper">
 				<h1>Index of:</h1>
+				<span id="nav-loading" aria-busy="true">Generating navigation breadcrumbs...</span>
 			</hgroup>
 		</header>
 
 		<main class="container-fluid pico-background-grey-50">
 			<div class="overflow-auto">
-				<!-- mod_autoindex appends table here -->
+				<article id="table-loading" aria-busy="true">Generating table...</article>
+				<div id="original-table-wrapper" style="display: none;">
+					<!-- mod_autoindex appends table here -->

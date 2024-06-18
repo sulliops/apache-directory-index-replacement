@@ -90,7 +90,7 @@ function buildNavItems() {
 
     }
 
-    $("#nav-wrapper").append(p);
+    $("#nav-loading").replaceWith(p);
 
 }
 
@@ -146,9 +146,10 @@ function buildNewTable() {
 
     let originalTable = parseTableToJSON();
 
-    $("table").remove();
+    $("#original-table-wrapper").remove();
 
     let newTable = document.createElement("table");
+    newTable.classList.add("striped");
 
     let tr = document.createElement("tr");
     for (let i = 0; i < originalTable["thead"].length; i++) {
@@ -205,9 +206,14 @@ function buildNewTable() {
     }
     newTable.appendChild(tableBody);
 
-    newTable.classList.add("striped");
+    // Fade out table loading placeholder and replace with new table
+    $(newTable).hide();
+    $("#table-loading").fadeOut("slow", function() {
 
-    $("main div").append(newTable);
+        $(this).replaceWith(newTable);
+        $(newTable).fadeIn("slow");
+
+    });
 
 }
 
@@ -219,7 +225,5 @@ $(document).ready(function () {
 
     buildNavItems();
     buildNewTable();
-
-    $("body").show();
 
 });
