@@ -12,7 +12,7 @@ After applying a few configuration options (i.e., `IndexOptions`, `HeaderName`, 
 
 ![](.images/after.png)
 
-The resulting HTML page is pretty, fully responsive, and mobile-ready, and it includes (mostly) functional breadcrumb navigation powered by [Pico CSS](https://github.com/picocss/pico).
+The resulting HTML page is pretty, fully responsive, and mobile-ready, and it includes (mostly) functional breadcrumb navigation.
 
 Some of the file/directory details that are normally provided by mod_autoindex are disabled in the configuration for the sake of simplicity, but the table (re-)building logic *should* be able to handle re-enabling the description row. Sorting functionality via queries is still supported.
 
