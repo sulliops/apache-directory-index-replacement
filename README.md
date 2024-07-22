@@ -26,7 +26,7 @@ Assuming WebDAV is setup and enabled in an existing virtual host config, add the
 <IfModule mod_autoindex.c>
 
 	# SET INDEX OPTIONS
-	IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* SuppressHTMLPreamble SuppressDescription HTMLTable
+	IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* SuppressDescription HTMLTable
 
 	# SET DISPLAY ORDER
 	IndexOrderDefault Ascending Name
