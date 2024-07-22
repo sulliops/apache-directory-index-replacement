@@ -1,19 +1,14 @@
-// Get the current pathname and remove trailing slash to mimic default mod_autoindex behavior
-// If removing trailing slash would result in an empty string, return "/"
-function getNormalizedPathname() {
-
-    // Decode URI if necessary
-    return (decodeURI(window.location.pathname.substring(0, window.location.pathname.length - 1)) || "/");
-
-}
-
 // Get an array of directory names in the current path
 function getdirectoryHierarchy() {
 
-    let hierarchy = window.location.pathname.split("/");
-    // Array begins and ends with empty string for whatever reason, 
-    // the beginning one will be used but not the ending one
-    hierarchy.pop();
+    let hierarchy = document.title.replace("Index of ", "").split("/");
+    // When the current directory is top-level and not aliased, an 
+    // extra empty string appears in the array
+    if (document.title === "Index of /") {
+
+        hierarchy.pop();
+
+    }
 
     for (let i = 0; i < hierarchy.length; i++) {
 
@@ -217,8 +212,8 @@ function buildNewTable() {
 
 }
 
-// Mimic the default mod_autoindex behavior for title
-document.title = "Index of " + getNormalizedPathname();
+// Set HTML theme
+$("html").attr("data-theme", "light");
 
 // Add body elements before showing body
 $(document).ready(function () {

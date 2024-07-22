@@ -12,7 +12,7 @@ After applying a few configuration options (i.e., `IndexOptions`, `HeaderName`, 
 
 ![](.images/after.png)
 
-The resulting HTML page is pretty, fully responsive, and mobile-ready, and it includes (mostly) functional breadcrumb navigation.
+The resulting HTML page is pretty, fully responsive, and mobile-ready, and it includes functional breadcrumb navigation.
 
 Some of the file/directory details that are normally provided by mod_autoindex are disabled in the configuration for the sake of simplicity, but the table (re-)building logic *should* be able to handle re-enabling the description row. Sorting functionality via queries is still supported.
 
@@ -44,7 +44,7 @@ Assuming WebDAV is setup and enabled in an existing virtual host config, add the
 
 Then, simply copy the [.theme](.theme/) directory into the root of your WebDAV share and restart apache2. The various configuration options can be changed as required and reloaded by restarting apache2.
 
-**Important note:** the breadcrumb navigation provided by the custom front end assumes a directory structure that begins at the root of your domain or hostname. For example: visiting `http://localhost/` places you in the root of your WebDAV share, as opposed to `http://localhost/webdav/` coupled with the Apache `Alias` directive as recommended by many tutorials. Breadcrumb navigation may not work as expected when configuration differs from the sample config.
+**Important note:** Apache resolves absolute locations for theme files supplied in the `HeaderName` and `ReadmeName` directives based on your `DocumentRoot`, meaning either the `DocumentRoot` must match the directory being used for WebDAV or the theme files must be stored in the separate `DocumentRoot` directory. If the latter configuration is used, the `Alias` directive may be used as shown in the DigitalOcean tutorial references above. The sample virtual host config provided in this repository sets the `DocumentRoot` to the same directory as the WebDAV share, and does *not* use `Alias`.
 
 ## Credits
 Thanks to a number of folks on StackOverflow for tidbits of information regarding mod_autoindex behavior, but most importantly to [Jeff Star](https://perishablepress.com/author/perish/) for his incredible [write-up on directory listing customizations](https://perishablepress.com/better-default-directory-views-with-htaccess/).
